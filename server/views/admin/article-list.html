@@ -1,0 +1,29 @@
+{% extends './layout.html' %}
+{% block title %}
+    <title>文章列表</title>
+{% endblock %}
+{% block css %}
+    <style>
+    #table img{
+        width: 40px!important;
+        height:40px!important
+    }
+    </style>
+{% endblock %}
+{% block content %}   
+    <div class="container">
+        <h1>文章列表</h1>
+        <div id="toolbar">
+            <button id="plus" class="btn btn-primary">
+                <i class="glyphicon glyphicon-plus"></i> 添加
+            </button>
+        </div>
+        <table id="table">
+        </table>
+    </div> 
+{% endblock %}
+{% block js %}
+    <script data-main="admin/article/list" src="/public/common/main.js"></script>
+{% endblock %}
+
+    

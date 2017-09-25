@@ -1,0 +1,24 @@
+
+{% extends './layout.html' %}
+{% block content %}
+<div class="main-content">
+	{% for article in articles %}
+		<article class="main-item">
+			<h3>
+				<a data-pjax href="/article/detail/{{article.id}}">{{article.title}}</a>
+				<span class="date">{{article.time.toLocaleDateString()}}</span>
+			</h3>
+			<div class="">
+				<a data-pjax href="/article/detail/{{article.id}}">
+					{{article.cover|raw()}}
+				</a>
+				<p class="">{{article.body}}</p>
+			</div>
+		</article>
+	{% endfor %}
+</div>
+{% endblock %}
+
+{% block js %}
+<script data-main="index/index" src="/public/common/main.js"></script>
+{% endblock %}

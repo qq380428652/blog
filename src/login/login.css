@@ -1,0 +1,26 @@
+body{
+    background: url(http://cn.bing.com/az/hprichbg/rb/BatEaredFox_ZH-CN12456670113_1920x1080.jpg);
+    background-size: cover;
+}
+.login{
+    margin: 100px 0;
+}
+img{
+    background: url(./avatar.jpg)
+}
+.avatar{
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: url(./avatar.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+.error-msg{
+    display: none;
+}
+#form-login{
+    padding: 26px 24px 46px;
+    background-color: rgba(251,251,251,0.3);
+}

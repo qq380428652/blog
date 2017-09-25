@@ -1,0 +1,66 @@
+
+{% extends './layout.html' %}
+{% block content %}
+<div class="main-content">
+	<article class="entry-main">
+		<input type="hidden" value="{{article.id}}">
+		<h1 class="entry-header">{{article.title}}</h1>
+		<div class="entry-content">{{article.body|raw()}}</div>
+		<div class="entry-footer clearfix">
+			<span class="meta-author">文/{{article.author}}</span>
+			<div class="share">
+				<a href="#">分享到</a>
+			</div>
+		</div>
+		<div class="comments">
+			<div class="comment-title">
+				<span>{{article.comments.length}} COMMENTS</span>
+			</div>
+			<ul class="comment-list">
+				{% for key,val in article.comments %}
+				<li class="comment">
+					<div class="authod-msg">
+						<img src="https://secure.gravatar.com/avatar/b97c8ff86487fbfdc0d6db4607c9bc05?s=38&d=mm&r=g"/>
+					</div>
+					<span class="authod-time">{{val.date.toLocaleDateString()}}</span>
+					<div class="comment-middle">
+						<span class="name">
+							<a href="#">{{val.username}}</a>
+						</span>
+						<a class="reply" href="#">回复</a>
+						<div class="text">{{val.body|raw()}}</div>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+			<div class="comment-title">
+				<span>LEAVE A REPLAY</span>
+			</div>
+			<form class="comment-respond">
+				<div class="authod-info">
+					<label for="username">名字：</label>
+					<input type="text" name="username"/>
+				</div>
+				<div class="small-img">
+					{% for key,val in small_img %}
+					<a>
+						<img src="{{ val.src }}" title="{{ val.title }}" value="{{ val.value }}"/>
+					</a>
+					{% endfor %}
+				</div>
+				<div class="comment-textarea">
+					<textarea name="comment"></textarea>
+				</div>
+				<div>
+					<span class="erro-msg"></span>
+					<button type="submit">发布</button>
+				</div>
+			</form>
+		</div>
+	</article>
+</div>
+{% endblock %}
+		
+{% block js %}
+<script data-main="index/index" src="/public/common/main.js"></script>
+{% endblock %}
