@@ -11,7 +11,7 @@ const srcPath=path.resolve(__dirname,'src');
 
 module.exports={
     entry:{
-        'common/main':srcPath+'/common/main.js',
+        'common/main':[srcPath + '/common/main.js', 'webpack-hot-middleware/client?reload=true'],
         'common/admin-lib':['jquery','bootstrap','BOOTSTRAT_CSS'],
         'common/lib':['jquery','APP_CSS']
     },

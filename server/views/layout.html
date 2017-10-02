@@ -1,154 +1,141 @@
 
 {% if isAjax %}
+	{% block title %}{% endblock %}
 	{% block content %}{% endblock %}
 {% else %}
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>喵星人 -「永无止尽」</title>
-		{% if !isAjax %}
-		<link rel="shortcut icon" href="/public/img/meow-logo.png" type="image/x-icon">
-		<link rel="stylesheet" href="/public/css/lib.css">
-		{% endif %}
-		{% block css %}{% endblock %}
-	</head>
-	<body>
-		<div>
-			<!--hearder-->
-			<header id="header-main">
-				<div class="hearder-content">
-					<div class="logo">
-						<a href=""><img class="logo-img" src="/public/img/avatar.jpg"/></a>
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8" />
+			{% block title %}{% endblock %}
+			{% if !isDev %}
+			<link rel="stylesheet" href="/public/css/lib.css">
+			{% endif %}
+			{% block css %}{% endblock %}
+		</head>
+		<body>
+			<div>
+				<!--hearder-->
+				<header id="header-main">
+					<div class="hearder-content">
+						<div class="logo">
+							<a href="#"><img class="logo-img" src="/public/img/avatar.jpg"/></a>
+						</div>
+						<nav class="main-nav">
+							<ul class="nav-ul clearfix">
+								<li><a href="/">首页</a></li>
+								<li><a data-pjax href="/about">关於</a></li>
+								<li><a data-pjax href="/">洒家茶話</a></li>
+								<li><a href="/404">文艺少年</a></li>
+								<li><a data-pjax href="/archive">归档</a></li>
+								<li class="dropdown has-children-menu">
+									<a class="dropdown-toggle" href="#">相册</a>
+									<ul class="dropdown-menu">
+										<li><a data-pjax href="/photo/home">家</a></li>
+										<li><a data-pjax href="/photo/cats">喵</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+						<form id="form-search" action="" method="get">
+							<input class="input-search" type="text" value="Search" />
+						</form>
 					</div>
-					<nav class="main-nav">
-						<ul class="nav-ul clearfix">
-							<li><a href="/">首页</a></li>
-							<li><a href="#">关於</a></li>
-							<li class="dropdown has-children-menu">
-								<a class="dropdown-toggle" href="#">青春代碼</a>
-								<ul class="dropdown-menu">
-									<li><a href="#">笔記</a></li>
-									<li><a href="#">折騰</a></li>
-									<li><a href="#">工作</a></li>
-									<li><a href="#">作品</a></li>
-									<li><a href="#">书签</a></li>
-									<li><a href="#">代码高亮</a></li>
-									
-								</ul>
-							</li>
-							<li><a href="#">洒家茶話</a></li>
-							<li><a href="#">文艺少年</a></li>
-							<li><a href="#">归档</a></li>
-							<li class="dropdown has-children-menu">
-								<a class="dropdown-toggle" href="#">相册</a>
-								<ul class="dropdown-menu">
-									<li><a href="#">家</a></li>
-									<li><a href="#">喵</a></li>
-									<li><a href="#">旧</a></li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-					<form id="form-search" action="" method="get">
-						<input class="input-search" type="text" value="Search" />
-					</form>
+				</header>
+				<div class="hearder_bottom_bg"></div>
+				<!--main-->
+				<div id="main">
+					{% block content %}{% endblock %}
 				</div>
-			</header>
-			<div class="hearder_bottom_bg"></div>
-			<!--main-->
-			<div id="main">
-				{% block content %}{% endblock %}
+				<footer id="footer-main">
+					<div class="footer-top-msg">
+						<aside class="new-comment">
+							<h3>最新评价</h3>
+							<ul>
+								<li>
+									<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
+									<a href="#">感觉到学习的力量！</a>
+								</li>
+								<li>
+									<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
+									<a href="#">来看看总能学到一点东西！</a>
+								</li>
+								<li>
+									<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
+									<a href="#">这个不错哦，我好好读读！</a>
+								</li>
+								<li>
+									<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
+									<a href="#">好几年没用过博客了，支持下！</a>
+								</li>
+							</ul>
+						</aside>
+						<aside class="hot-tag">
+							<h3>热门标签</h3>
+							<ul>
+								<li><a href="#">暂无...</a></li>
+							</ul>
+						</aside>
+						<aside class="msg-wall">
+							<h3>留言墙</h3>
+							<ul class="clearfix">
+								<li>
+									<a href="#">
+										<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
+									</a>
+								</li><li>
+									<a href="#">
+										<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
+									</a>
+								</li><li>
+									<a href="#">
+										<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
+									</a>
+								</li><li>
+									<a href="#">
+										<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
+									</a>
+								</li>
+							</ul>
+						</aside>
+					</div>
+					<div class="footer-bottom-msg">
+						<div class="social">
+							<a><i class="iconfont icon-dingyue" title="RSS订阅我"></i></a>
+							<a href="https://mail.126.com/js6/main.jsp"><i class="iconfont icon-email" title="电子邮箱"></i></a>
+							<a href="http://weibo.com/u/3084498077?refer_flag=1001030102_"><i class="iconfont icon-xinlang" title="新浪微博"></i></a>
+							<a href="https://github.com/qq380428652/blog"><i class="iconfont icon-github" title="Github"></i></a>
+							
+						</div>
+						<div class="copyright">
+							copyright&nbsp;<span>©</span>&nbsp;暂无...
+						</div>
+					</div>
+				</footer>
+				<div id="entry-bg">
+					<img src="https://o0xihan9v.qnssl.com/wp-content/uploads/2015/08/shuzhi2.jpg"/>
+				</div>
+				<div id="scroll-top"></div>
 			</div>
-			<footer id="footer-main">
-				<div class="footer-top-msg">
-					<aside class="new-comment">
-						<h3>最新评价</h3>
-						<ul>
-							<li>
-								<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
-								<a href="#">感觉到学习的力量！</a>
-							</li>
-							<li>
-								<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
-								<a href="#">来看看总能学到一点东西！</a>
-							</li>
-							<li>
-								<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
-								<a href="#">这个不错哦，我好好读读！</a>
-							</li>
-							<li>
-								<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
-								<a href="#">好几年没用过博客了，支持下！</a>
-							</li>
-						</ul>
-					</aside>
-					<aside class="hot-tag">
-						<h3>热门标签</h3>
-						<ul>
-							<li><a href="#">暂无...</a></li>
-						</ul>
-					</aside>
-					<aside class="msg-wall">
-						<h3>留言墙</h3>
-						<ul class="clearfix">
-							<li>
-								<a href="#">
-									<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
-								</a>
-							</li><li>
-								<a href="#">
-									<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
-								</a>
-							</li><li>
-								<a href="#">
-									<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
-								</a>
-							</li><li>
-								<a href="#">
-									<img src="https://secure.gravatar.com/avatar/9f0230ad89506f5c36c192784b5a0bff?s=46&d=mm&r=g"/>
-								</a>
-							</li>
-						</ul>
-					</aside>
-				</div>
-				<div class="footer-bottom-msg">
-					<div class="social">
-						<a><i class="iconfont icon-dingyue" title="RSS订阅我"></i></a>
-						<a><i class="iconfont icon-email" title="电子邮箱"></i></a>
-						<a><i class="iconfont icon-xinlang" title="新浪微博"></i></a>
-						<a><i class="iconfont icon-github" title="Github"></i></a>
-						
-					</div>
-					<div class="copyright">
-						copyright&nbsp;<span>©</span>&nbsp;暂无...
-					</div>
-				</div>
-			</footer>
-			<div id="entry-bg">
-				<img src="https://o0xihan9v.qnssl.com/wp-content/uploads/2015/08/shuzhi2.jpg"/>
-			</div>
-			<div id="scroll-top"></div>
-		</div>
-		
-		<script src="/public/common/lib.js"></script>
-		{% block js %}{% endblock %}
-		
-		{% if isDev%}
-		<script src="/reload/reload.js"></script>
-		{% endif %}
-	</body>
-</html>
+			
+			<script src="/public/common/lib.js"></script>
+			{% block js %}{% endblock %}
+			
+			{% if isDev%}
+			<script src="/reload/reload.js"></script>
+			{% endif %}
+		</body>
+	</html>
 
 {% endif %}

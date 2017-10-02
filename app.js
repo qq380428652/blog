@@ -65,14 +65,12 @@ require('./server/routes/routes')(app);
 
 
 
-swig.setDefaults({
-    cache:false
-})
-
-
-
 if (isDev) {
-    //前端改，浏览器自动刷
+    swig.setDefaults({
+        cache:false
+    })
+
+
     const webpack=require('webpack');
     const webpackConfig=require('./webpack.config.js');
     const compiler=webpack(webpackConfig);
@@ -89,16 +87,13 @@ if (isDev) {
     
     
     
-    
-    //修改views页面浏览器自动刷新
     const browserSync=require('browser-sync').create();
     
-    //服务器重启浏览器自动刷新
     const reload=require('reload');
     const http=require('http');
     const server=http.createServer(app);
     reload(app);
-    server.listen(8000,()=>{
+    server.listen(8080,()=>{
         browserSync.init({
             ui:false,
             open:false,

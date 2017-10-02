@@ -6,6 +6,7 @@ const fs=require('fs');
 
 const Article=require('../dbmodels/Article');
 
+
 //判断请求方式
 router.use((req,res,next)=>{
     res.locals.isAjax=req.xhr;
@@ -31,6 +32,22 @@ router.get(['/'],(req,res,next)=>{
             articles
         });
     })
+});
+//about页
+router.get('/about',(req,res,next)=>{
+    res.render('about')
+})
+//归档页
+router.get('/archive',(req,res,next)=>{
+    res.render('archive')
+})
+//404
+router.get('/404',(req,res,next)=>{
+    res.render('404')
+})
+//photo
+router.get('/photo/:name',(req,res,next)=>{
+        res.render('photo')
 });
 //文章详情页
 router.get('/article/detail/:id',(req,res,next)=>{

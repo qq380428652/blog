@@ -2,36 +2,31 @@
 
 function reset() {
 
-    let articles = $('article.main-item');
+    let articles = $('.main-item');
     let content = $('.main-content');
-    //卡片宽度
-    let article_width_old = 308;
-    //卡片父级宽度
+    let article_width_old = 300;
     let content_width = content.width();
 
 
-    let all_height = [];//所有卡片高度集合
-    let max_column = parseInt(content_width / article_width_old);//总列数
-    let article_margin = 6 * 2//两边的margin值和
+    let all_height = [];
+    let max_column = parseInt(content_width / article_width_old);
+    let article_margin = 12
 
-    //重置卡片宽度
     let article_width_new = content_width / max_column
     articles.css('width', article_width_new - article_margin);
     
-    //设置卡片父级高度(卡片撑开的高度)
     let content_height = content.height();
     content.css('height', content_height);
     
-    //卡片定位
     articles.css({
         'position': 'absolute',
         'left': 0,
         'top': 0
     })
     articles.each(function (index, item) {
-        let column = index % max_column;//当前article的列数
+        let column = index % max_column;
         let left = article_width_new * column;
-        let row = Math.floor(index / max_column);//当前article的行数
+        let row = Math.floor(index / max_column);
         all_height.push($(item).outerHeight(true));
 
         let top = 0;
@@ -44,14 +39,9 @@ function reset() {
         });
     });
 }
-reset();
-$(window).resize(function () {
-    reset();
-});
-
 
 function change() {
-    //设置高度(卡片撑开的高度)
+    
     let content_height = $('.main-content').height();
     $('.main-content').css('height', content_height);
     
@@ -107,6 +97,12 @@ function change() {
     })
 }
 
+reset();
+$(window).resize(function () {
+    reset();
+});
+
+
 $(document).pjax('a[data-pjax]','#main');
 $(document).on('pjax:complete',function(){
     change()
@@ -121,7 +117,7 @@ $(window).on('load',function () {
 });
 
 
-//------------查找search--------------
+
 $('.input-search').on('blur', function () {
     if (this.value == '') {
         this.value = 'Search';
@@ -131,7 +127,7 @@ $('.input-search').on('blur', function () {
         this.value = '';
     }
 });
-//------------返回顶部--------------
+
 $(document).on('scroll', function () {
     if ($(document).scrollTop() > 400) {
         $('#scroll-top').css({ 'display': 'block', 'opacity': '0.7', 'transition': 'opacity 2s' });

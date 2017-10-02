@@ -6,7 +6,7 @@
 body{
 	margin: 0;
 }
-ul,ol,dl{
+ul,ol,dl,dd{
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -68,7 +68,7 @@ a:hover{
 	font-size: 12px;
 }
 .nav-ul{
-	width: 456px;
+	width: 380px;
     margin: 0 auto;
 	text-align: center;
 }
@@ -162,7 +162,7 @@ a:hover{
 }
 .main-item{
 	display: inline-block;
-	width: 308px;
+	width: 300px;
 	background: #FFFFFF;
 	padding: 24px;
 	margin: 6px;
@@ -327,7 +327,7 @@ a:hover{
 .entry-footer{
 	margin: 50px 0;
 }
-.entry-footer .meta-author{
+.entry-footer .author{
 	float: left;
 	opacity: 0.7;
 }
@@ -515,3 +515,57 @@ a:hover{
 .icon-github:before { content: "\e824"; }
 
   
+/* 关於 */
+.about-title,.about-author,.about-content{
+	font-size: 20px;
+	text-align: center
+}
+.about-title{
+	font-size:24px;
+	margin: 10px 0;
+}
+.about-author{
+	display: block;
+	font-size:18px
+}
+.about-content{
+	margin-bottom: 20px
+}
+
+/* 归档 */
+.archive{
+	width: 90%;
+	float: left
+}
+.archive-month{
+	font-size: 16px;
+	margin:50px 0
+}
+.archive-date{
+	list-style: square;
+	margin: 20px 0 20px 40px
+}
+.archive-month span:last-child{
+	display: inline-block;
+	width: 80%;
+	border-top: 2px solid #E0DFDF;
+	margin: 5px 10px
+}
+.archive-nav{
+	width:10%;
+	float: right;
+}
+.nav-map dt{
+	margin: 15px 0
+}
+.nav-map .year{
+	font:  14px/14px '微软雅黑';
+	padding: 6px 5px;
+	border-left: 2px solid #747373
+}
+.nav-map .month{
+	font-size: 10px;
+	padding: 2px 5px;
+	margin: 6px 0;
+	border-left: 2px solid #747373
+}
