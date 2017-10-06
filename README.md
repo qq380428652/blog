@@ -1,7 +1,7 @@
 # blog
 博客网站
 
-安装
+安装/n
 npm install
 
 打包
