@@ -23,7 +23,7 @@ router.get(['/'],(req,res,next)=>{
         '_id':-1
     }).skip(offset).limit(9).then(articles=>{
         articles.map(item=>{
-            item.title=item.title.substring(0,10)+'...';
+            item.title=item.title.substring(0,8)+'...';
             item.cover=item.body.match(/<img.*?(?:>|\/>)/i)||'<img src="/public/img/906877084826210304.jpg" alt="906877084826210304.jpg"/>'
             item.body=item.body.replace(/<[^>]+>/g,"").substring(0,90)+'...';
             return item;
