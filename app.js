@@ -112,7 +112,7 @@ if (isDev) {
     
     app.listen(8080,()=>{
             console.log('服务器启动');
-    }) 
+    })
 }
 
 mongoose.connect('mongodb://localhost:27017/blog',{useMongoClient: true})
