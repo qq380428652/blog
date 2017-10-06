@@ -32,11 +32,11 @@
                         </dd>
                     </dl>
                 </div>
-                {% for article in articles %}
-                    {% if year!=article.time.getFullYear()||month!=article.time.getMonth()+1 %}
-                    {% set month=article.time.getMonth()+1 %}
-                    {% set year=article.time.getFullYear() %}
-                        <div class="archive">
+                <div class="archive">
+                    {% for article in articles %}
+                        {% if year!=article.time.getFullYear()||month!=article.time.getMonth()+1 %}
+                            {% set month=article.time.getMonth()+1 %}
+                            {% set year=article.time.getFullYear() %}
                             <h3 class="archive-month">
                                 <span id="{{article.time.getFullYear()}}{{article.time.getMonth()+1}}">{{article.time.getFullYear()}}年 {{article.time.getMonth()+1}}月</span>
                                 <span></span>
@@ -51,9 +51,9 @@
                                     {% endif %}
                                 {% endfor %}
                             </ul>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

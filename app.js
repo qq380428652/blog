@@ -14,8 +14,9 @@ const ueditor = require("ueditor");
 
 const app=express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+
+app.use(bodyParser.json({limit: '1mb'}));
+app.use(bodyParser.urlencoded({limit: '1mb', extended: true}));
 
 app.use(session({
     secret:'woqu',
@@ -29,6 +30,7 @@ app.locals.isDev=isDev;
 app.engine('html',swig.renderFile);
 app.set('views','./server/views');
 app.set('view engine','html');
+
 
 //-------------------ueditor---------------
 app.use('/ueditor',express.static(__dirname+'/public/ueditor'))
