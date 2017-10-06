@@ -3,7 +3,7 @@
 
 let modelPath=$('[data-main]').data('main');
 console.log(modelPath)
-//异步引入模块
+
 if (modelPath) {
     import('../'+modelPath)
     .then(model=>{

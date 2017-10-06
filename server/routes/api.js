@@ -41,7 +41,7 @@ router.post('/user/check',(req,res,next)=>{
     })
 });
 //评论提交
-router.post('/comment/add:id',(req,resp,next)=>{
+router.post('/comment/add/:id',(req,resp,next)=>{
     if (!req.body.username||!req.body.usercomment) {
         resmsg.message='用户名或内容不能为空';
         resp.json(resmsg);
@@ -55,8 +55,8 @@ router.post('/comment/add:id',(req,resp,next)=>{
     Article.findByIdAndUpdate(req.params.id,{
         $push:{
             comments:{
-                    username:req.body.username,
-                    body:req.body.usercomment
+                username:req.body.username,
+                body:req.body.usercomment
             }
         }
     }).then(article=>{

@@ -81,7 +81,7 @@ $(window).on('load', function () {
             }
             $.ajax({
                 type: "post",
-                url: "/api/comment/add" + id,
+                url: "/api/comment/add/" + id,
                 data: user,
                 dataType: "json",
                 success: function (resp) {
