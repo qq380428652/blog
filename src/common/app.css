@@ -307,6 +307,7 @@ a:hover{
 	background: #FFFFFF;
 	padding: 40px;
 	margin: 0 auto;
+	min-height: 400px
 }
 .entry-main p{
 	margin: 30px 0;
@@ -539,11 +540,7 @@ a:hover{
 }
 .archive-month{
 	font-size: 16px;
-	margin:50px 0
-}
-.archive-date{
-	list-style: square;
-	margin: 20px 0 20px 40px
+	margin:40px 0
 }
 .archive-month span:last-child{
 	display: inline-block;
@@ -551,9 +548,34 @@ a:hover{
 	border-top: 2px solid #E0DFDF;
 	margin: 5px 10px
 }
+.archive-date{
+	list-style: square;
+	font-size: 14px;
+	margin: 20px 0 20px 40px
+}
+.archive-date>li{
+	margin: 10px
+}
+.archive-date a{
+	color: #FA8080;
+	margin-left: 20px;
+	padding: 2px 4px;
+	border-radius: 4px;
+}
+.archive-date a:hover{
+	background: #FA8080;
+	color: #FFFFFF
+	
+}
 .archive-nav{
+	position: relative;
 	width:10%;
 	float: right;
+}
+.nav-map{
+	position: absolute;
+    top: 0;
+    right: 0;
 }
 .nav-map dt{
 	margin: 15px 0
@@ -568,4 +590,8 @@ a:hover{
 	padding: 2px 5px;
 	margin: 6px 0;
 	border-left: 2px solid #747373
+}
+.map-active{
+	border-left: 2px solid #313131;
+	color: #464646
 }

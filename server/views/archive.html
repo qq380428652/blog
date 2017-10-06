@@ -8,30 +8,52 @@
         <div class="entry-main">
             <h1 class="entry-header">归档</h1>
             <div class="clearfix">
-                <div class="archive">
-                    <h3 class="archive-month">
-                        <span>2015年 01月</span>
-                        <span></span>
-                    </h3>
-                    <ul class="archive-date">
-                        <li>
-                            <span>01日</span>
-                            <a href="#">程序猿的小说</a>
-                        </li>
-                    </ul>
-                </div>
+                {% set year='' %}
+                {% set month='' %}
+                {% set date='' %}
                 <div class="archive-nav">
                     <dl class="nav-map">
                         <dt>Map</dt>
-                        
                         <dd>
-                            <ul>
-                                <li class="year">2015年</li>
-                                <li class="month">8月</li>
-                            </ul>
+                            {% for article in articles %}
+                                {% if year!=article.time.getFullYear() %}
+                                    {% set year=article.time.getFullYear() %}
+                                    <ul>
+                                        <li class="year">{{article.time.getFullYear()}}年</li>
+                                        {% for article in articles %}
+                                            {% if year==article.time.getFullYear()&&month!=article.time.getMonth()+1 %}
+                                                {% set month=article.time.getMonth()+1 %}
+                                                <li class="month"><a href="#{{article.time.getFullYear()}}{{article.time.getMonth()+1}}">{{article.time.getMonth()+1}}月</a></li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endfor %}
                         </dd>
                     </dl>
                 </div>
+                {% for article in articles %}
+                    {% if year!=article.time.getFullYear()||month!=article.time.getMonth()+1 %}
+                    {% set month=article.time.getMonth()+1 %}
+                    {% set year=article.time.getFullYear() %}
+                        <div class="archive">
+                            <h3 class="archive-month">
+                                <span id="{{article.time.getFullYear()}}{{article.time.getMonth()+1}}">{{article.time.getFullYear()}}年 {{article.time.getMonth()+1}}月</span>
+                                <span></span>
+                            </h3>
+                            <ul class="archive-date">
+                                {% for article in articles %}
+                                    {% if year==article.time.getFullYear()&&month==article.time.getMonth()+1 %}
+                                        <li>
+                                            <span>{{article.time.getDate()}}日</span>
+                                            <a href="/article/detail/{{article.id}}">{{article.title}}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@
 {% if isAjax %}
 	{% block title %}{% endblock %}
 	{% block content %}{% endblock %}
+	{% block js %}{% endblock %}
 {% else %}
 
 	<!DOCTYPE html>
@@ -27,7 +28,7 @@
 								<li><a href="/">首页</a></li>
 								<li><a data-pjax href="/about">关於</a></li>
 								<li><a data-pjax href="/">洒家茶話</a></li>
-								<li><a href="/404">文艺少年</a></li>
+								<li><a data-pjax href="/404">文艺少年</a></li>
 								<li><a data-pjax href="/archive">归档</a></li>
 								<li class="dropdown has-children-menu">
 									<a class="dropdown-toggle" href="#">相册</a>
@@ -55,19 +56,19 @@
 							<ul>
 								<li>
 									<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
-									<a href="#">感觉到学习的力量！</a>
+									<a href="#"></a>
 								</li>
 								<li>
 									<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
-									<a href="#">来看看总能学到一点东西！</a>
+									<a href="#"></a>
 								</li>
 								<li>
 									<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
-									<a href="#">这个不错哦，我好好读读！</a>
+									<a href="#"></a>
 								</li>
 								<li>
 									<span><img src="https://secure.gravatar.com/avatar/06da32f092ddd4777c2beda897b81196?s=32&d=mm&r=g"/></span>
-									<a href="#">好几年没用过博客了，支持下！</a>
+									<a href="#"></a>
 								</li>
 							</ul>
 						</aside>

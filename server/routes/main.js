@@ -39,7 +39,14 @@ router.get('/about',(req,res,next)=>{
 })
 //归档页
 router.get('/archive',(req,res,next)=>{
-    res.render('archive')
+    Article.find().sort({
+        '_id':-1
+    }).then(articles=>{
+        res.render('archive',{
+            articles
+        })
+    })
+    
 })
 //404
 router.get('/404',(req,res,next)=>{
