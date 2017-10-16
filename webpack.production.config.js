@@ -58,7 +58,7 @@ module.exports={
             },
             {
                 test:/\.(jpg|png)$/,
-                use:'url-loader?limit=8192&context=client&name=/img/[name].[ext]'
+                use:'url-loader?limit=1024&context=client&name=/img/[name].[ext]'
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
