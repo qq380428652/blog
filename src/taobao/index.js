@@ -50,8 +50,7 @@ $(window).on('load',function(){
     autoSize()
     autoPlay();
     $(window).resize(function () { 
-        autoSize()
-        autoPlay();
+        location.reload();
     });
     $('.search-placeholder').on('touchstart',function(){
         $('.search-placeholder').hide()
