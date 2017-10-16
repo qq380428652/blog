@@ -78,6 +78,17 @@ router.get('/logout',(req,res,next)=>{
     res.redirect('login');
 })
 
- 
+
+// 移动端淘宝主页
+router.get('/taobao',(req,res,next)=>{
+    let content_slide=JSON.parse(fs.readFileSync('public/json/content-slide.json','utf-8'))
+    res.render('taobao/index',{
+        content_slide
+    })
+})
+// pc端美团主页
+router.get('/meituan',(req,res,next)=>{
+    res.render('meituan/index')
+})
 
 module.exports=router;

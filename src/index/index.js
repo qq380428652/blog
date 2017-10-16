@@ -43,7 +43,6 @@ $(window).on('load', function () {
     };
 
     function change() {
-
         let content_height = $('.main-content').height();
         $('.main-content').css('height', content_height);
 

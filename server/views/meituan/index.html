@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>美团网</title>
+		{% if !isDev %}
+			<link rel="stylesheet" href="/public/css/lib.css">
+		{% endif %}
+	</head>
+	<body>
+		<header>
+			<!--顶部导航start-->
+			<nav class="top-nav">
+				<div class="inner clearfix">
+					<ul class="left">
+						<li><a id="collect" href="#"><i class="icon-collect"></i> 收藏美团</a></li>
+						<li><a id="login" href="#">登陆</a></li>
+						<li><a id="registe" href="#">注册</a></li>
+					</ul>
+					
+					<ul class="right">
+						<li><a href="#">我的订单</a></li>
+						<li><a href="#">我的美团<i class="down-arrow"></i></a></li>
+						<li><a href="#">最近浏览<i class="down-arrow"></i></a></li>
+						<li><a href="#">联系客服<i class="down-arrow"></i></a></li>
+						<li><a href="#">我是商家<i class="down-arrow"></i></a></li>
+						<li><a href="#">代理商招募<i class="down-arrow"></i></a></li>
+						<li><a href="#">更多<i class="down-arrow"></i></a></li>
+					</ul>
+				</div>
+			</nav>
+			<!--顶部导航end-->
+			
+			
+			<!--图标和搜索start-->
+			<div id="header-branding">
+				<div>
+					<h1>
+						<a href="#" class="site-logo">
+			                <img src="http://s0.meituan.net/bs/fe-web-meituan/24e4d32/img/logo.png" alt="北京美团网" height="54px">
+			            </a>	
+					</h1>
+					<div class="city">
+						<h2><a href="#">北京</a></h2>
+						<a class="switch-city" href="#">切换城市</a>
+					</div>
+				</div>
+				
+				<div class="search-box">
+					<form class="clearfix" action="http://www.meituan.com/s/" method="get">
+						<div class="group-buying">
+							<div>团购</div>
+							<i class="down-arrow"></i>
+						</div>
+						<input type="text" name="w" placeholder="请输入商品名称、地址等" autocomplete="off" />
+						<input type="submit" value="搜索" />
+					</form>
+					<div class="hot-search">
+						<a class="hot-link" href="#" >海鲜</a>
+						<a class="hot-link" href="#" >大渔</a>
+						<a class="hot-link" href="#" >虾吃虾涮</a>
+						<a class="hot-link" href="#" >吉野家</a>
+						<a class="hot-link" href="#" >比格</a>
+						<a class="hot-link" href="#" >烤肉</a>
+						<a class="hot-link" href="#" >蛋糕</a>
+						<a class="hot-link" href="#" >东来顺</a>
+						<a class="hot-link" href="#" >自助</a>
+					</div>
+				</div>
+				
+				<div class="commitment">
+					<a href="">
+						<span class="commitment-item">
+							<i class="icon-commitment-1"></i>
+							随时退
+						</span>
+						<span class="commitment-item">
+							<i class="icon-commitment-2"></i>
+							不满意免单
+						</span>
+						<span class="commitment-item">
+							<i class="icon-commitment-3"></i>
+							过期退
+						</span>
+						
+					</a>
+				</div>
+			</div>
+			<!--图标和搜索end-->
+			
+			<!--导航2start-->
+			<div class="bottom-nav clearfix">
+				<div class="all-category">
+					<span>全部分类</span>
+					<!--分类导航-->
+					<ul class="category-nav-level-1">
+						<li class="category-nav-item-1">
+							<dl class="category-nav-level-2 clearfix">
+								<dt><a href="#">美食</a></dt>
+								<dd><a href="#">自助餐</a></dd>
+								<dd><a href="#">代金券</a></dd>
+							</dl>
+							<i class="icon-right-arrow-bold"></i>
+						</li>
+						<li class="category-nav-item-1">
+							<dl class="category-nav-level-2 clearfix">
+								<dt><a href="#">酒店</a>/<a href="#">客栈</a></dt>
+								<dd><a href="#">经济型酒店</a></dd>
+							</dl>
+							<i class="icon-right-arrow-bold"></i>
+						</li>
+						<li class="category-nav-item-1">
+							<dl class="category-nav-level-2 clearfix">
+								<dt><a href="#">猫眼电影</a>/<a href="#">在线选座</a></dt>
+							</dl>
+							<i class="icon-right-arrow-bold"></i>
+						</li>
+						<li class="category-nav-item-1">
+							<dl class="category-nav-level-2 clearfix">
+								<dt><a href="#">KTV</a></dt>
+							</dl>
+						</li>
+						<li class="category-nav-item-1">
+							<dl class="category-nav-level-2 clearfix">
+								<dt><a href="#">休闲娱乐</a></dt>
+								<dd><a href="#">足疗按摩</a></dd>
+								<dd><a href="#">温泉</a></dd>
+							</dl>
+							<i class="icon-right-arrow-bold"></i>
+						</li>
+						<li class="category-nav-item-1">
+							<dl class="category-nav-level-2 clearfix">
+								<dt><a href="#">周边游</a>/<a href="#">旅游</a></dt>
+							</dl>
+							<i class="icon-right-arrow-bold"></i>
+						</li>
+						<li class="category-nav-item-1">
+							<dl class="category-nav-level-2 clearfix">
+								<dt><a href="#">生活服务</a></dt>
+								<dd><a href="#">婚纱摄影</a></dd>
+								<dd><a href="#">个性写真</a></dd>
+							</dl>
+							<i class="icon-right-arrow-bold"></i>
+						</li>
+						<li class="category-nav-item-1">
+							<dl class="category-nav-level-2 clearfix">
+								<dt><a href="#">丽人</a></dt>
+								<dd><a href="#">美发</a></dd>
+								<dd><a href="#">美甲美睫</a></dd>
+							</dl>
+							<i class="icon-right-arrow-bold"></i>
+						</li>
+						<li class="category-nav-item-1">
+							<dl class="category-nav-level-2 clearfix">
+								<dt><a href="#">今日新单</a></dt>
+							</dl>
+						</li>	
+					</ul>
+				</div>
+				<ul class="nav-bar">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">今日新单</a></li>
+					<li><a href="#">美食</a></li>
+					<li><a href="#">身边外卖</a></li>
+					<li><a href="#">名店抢购</a></li>
+				</ul>
+			</div>
+			<!--导航2end-->
+		</header>
+		
+		<div class="content">
+			<!--content-header-->
+			<div class="content-header">
+				<!--中间-->
+				<div class="content-header-main">
+					<!--条件过滤start-->
+					<ul class="condition-filter">
+						<li>
+							<dl>
+								<dt><i class="icon-hot"></i>热门团购</dt>
+								<dd><a href="#">自助餐</a></dd>
+								<dd><a href="#">火锅</a></dd>
+								<dd><a href="#">小吃快餐</a></dd>
+								<dd><a href="#">烧烤烤肉</a></dd>
+								<dd><a href="#">西餐</a></dd>
+								<dd><a href="#">日韩料理</a></dd>
+								<dd><a href="#">甜点饮品</a></dd>
+								<dd><a href="#">香锅烤鱼</a></dd>
+								<dd><a href="#">海鲜</a></dd>
+							</dl>
+						</li>
+						
+						<li>
+							<a class="more-area" href="#">更多<i class="down-arrow"></i></a>
+							<dl>
+								<dt><i class="icon-position"></i>全部区域</dt>
+								<dd><a href="#">朝阳区</a></dd>
+								<dd><a href="#">海淀区</a></dd>
+								<dd><a href="#">丰台区</a></dd>
+								<dd><a href="#">西城区</a></dd>
+								<dd><a href="#">东城区</a></dd>
+								<dd><a href="#">昌平区</a></dd>
+								<dd><a href="#">石景山区</a></dd>
+								<dd><a href="#">通州区</a></dd>
+								<dd><a href="#">大兴区</a></dd>
+							</dl>
+							
+						</li>
+						<li>
+							<dl>
+								<dt><i class="icon-trading-area"></i>热门商圈</dt>
+								<dd><a href="#">望京</a></dd>
+								<dd><a href="#">昌平镇</a></dd>
+								<dd><a href="#">亦庄</a></dd>
+								<dd><a href="#">中关村</a></dd>
+								<dd><a href="#">远大路</a></dd>
+								<dd><a href="#">西红门</a></dd>
+								<dd><a href="#">双井</a></dd>
+								<dd><a href="#">大望路</a></dd>
+								<dd><a href="#">黄村</a></dd>
+								<dd><a href="#">牡丹园/北太平庄</a></dd>
+							</dl>
+						</li>
+					</ul>
+					<!--条件过滤end-->
+					
+					
+					<!--推荐start-->
+					<ul class="recommend-slide">
+						<li class="recommend-slide-item">
+							<div class="left">
+								<a href="#">
+									<img src="public/img/img1.jpg" >
+									<div class="discount">
+										9.1
+									</div>
+								</a>
+								<div class="title">
+									<a href="#">巧板烤肉</a>
+									<p>午餐自助，提供免费WiFi</p>
+								</div>
+								<div class="price"> ¥ 53 </div>
+							</div>
+							<div class="right">
+								<a href="#">
+									<img src="public/img/img2.jpg" >
+									<div class="discount">
+										7.8
+									</div>
+								</a>
+								<div class="title">
+									<a href="#">汗拿山</a>
+									<!--字如果超出一行 要截取-->
+									<p>110元代金券1张，可叠加使用110元代金券1张，可叠加使用</p>
+								</div>
+								<div class="price"> ¥ 100 </div>
+							</div>
+						</li>
+					</ul>
+					<!--推荐end-->
+					
+				</div>
+				
+				<!--右边-->
+				<div class="content-header-right">
+					<div class="qrcode-image">
+						<img src="public/img/qrcode.png">
+					</div>
+					<div class="daily-new">
+						<a href="#">
+							<div class="daily-title">每日上新</div>
+							<div class="daily-desc">吃喝玩乐最低价</div>
+							<img width="198" src="public/img/daily.png">
+						</a>
+					</div>
+				</div>
+				
+			</div>
+			
+			
+			<!--具体分类列表-->
+			<div class="category-list">
+				<div class="category-item" id="food">
+					<div class="category-item-head clearfix">
+						<a class="title" href="#"><i class="icon-food"></i>美食</a>
+						<ul class="category-item-nav">
+							<li><a href="#">美食</a></li>
+							<li><a href="#">代金券</a></li>
+							<li><a href="#">自助餐</a></li>
+							<li><a href="#">火锅</a></li>
+							<li><a href="#">烧烤烤肉</a></li>
+							<li><a href="#">香锅烤鱼</a></li>
+							<li><a href="#">西餐</a></li>
+							<li><a href="#">全部<i class="icon-right-arrow-thin"></i></a></li>
+						</ul>
+					</div>
+					
+					<div class="category-item-body clearfix">
+						
+						<!--start-->
+						<div class="category-item-detail">
+							<a class="cover" href="#">
+								<img src="public/img/img3.jpg">
+								<span class="mark">
+									<span class="mark-duotaocan"></span>
+									<span class="mark-mianyuyue"></span>
+								</span>
+							</a>
+							<a class="title" href="#">
+								<span>【2店通用】火宴山自助火锅</span>
+								<span>自助下午餐/夜宵 2选1，新疆风味美食纯正地道</span>
+							</a>
+							<div class="detail">
+							    <span class="price">¥70</span>
+							    <span class="value">门店价 <del class="num"><span>¥</span>78</del></span>
+							    <span class="sales">已售323196</span>
+							</div>
+							<div class="comment">
+								<a href="#">
+									<span class="comment-star">
+										<span class="comment-rate"></span>
+									</span>
+									<span class="comment-count">33883人评价</span>
+								</a>
+							</div>
+						</div>
+						<!--end-->
+					</div>
+					
+					<div class="category-item-foot">
+						<a href="#">更多美食团购，请点击查看<i class="icon-right-arrow-thin"></i></a>
+					</div>
+				</div>
+				
+				
+				<!--猫眼电影-->
+				<div class="category-item" id="movie">
+					<div class="category-item-head clearfix">
+						<a class="title"  href="#"><i class="icon-movie"></i>猫眼电影</a>
+						<ul class="category-item-nav">
+							<li><a href="#">猫眼电影</a></li>
+							<li><a href="#">电影票团购</a></li>
+							<li><a href="#">电影院</a></li>
+							<li><a href="#">在线选座</a></li>
+							<li><a href="#">最新电影</a></li>
+							<li><a href="#">全部<i class="icon-right-arrow-thin"></i></a></li>
+						</ul>
+					</div>
+					
+					<div class="category-item-body clearfix">
+						
+						<!--start-->
+						<div class="category-item-detail">
+							<a class="cover" href="#">
+								<img src="public/img/img4.jpg">
+								<span class="mark">
+									<span class="mark-duotaocan"></span>
+									<span class="mark-mianyuyue"></span>
+								</span>
+							</a>
+							<a class="title" href="#">
+								<span>【5店通用】星美汇</span>
+								<span>浪漫红酒双人套餐，提供免费WiFi</span>
+							</a>
+							<div class="detail">
+							    <span class="price">¥99</span>
+							    <span class="value">门店价 <del class="num"><span>¥</span>156</del></span>
+							    <span class="sales">已售57</span>
+							</div>
+							<div class="comment">
+								<a href="#">
+									<span class="comment-star">
+										<span class="comment-rate"></span>
+									</span>
+									<span class="comment-count">6人评价</span>
+								</a>
+							</div>
+						</div>
+						<!--end-->
+					</div>
+					
+					<div class="category-item-foot">
+						<a href="#">更多美食团购，请点击查看<i class="icon-right-arrow-thin"></i></a>
+					</div>
+				</div>
+				
+				<!--左边固定定位-->
+				<ul class="fixed-nav">
+					<li><a href="#food"><i class="icon-food"></i>美食</a></li>
+					<li><a href="#"><i class="icon-cup"></i>休闲娱乐</a></li>
+					<li><a href="#movie"><i class="icon-movie"></i>猫眼电影</a></li>
+					<li><a href="#"><i class="icon-hotel"></i>酒店</a></li>
+					<li><a href="#"><i class="icon-life-service"></i>生活服务</a></li>
+					<li><a href="#"><i class="icon-beauty"></i>丽人</a></li>
+					<li><a href="#"><i class="icon-fly"></i>旅游</a></li>
+				</ul>
+			</div>
+			
+			
+			<!--广告推荐-->
+			<div class="ads-recommend">
+				<ul class="recommend-nav clearfix">
+					<li class="current"><a href="#group-buying-category">团购分类</a></li>
+					<li><a href="#hot-position">热门地标</a></li>
+					<li><a href="#surrounding-city">周边城市</a></li>
+					<li><a href="#brand-recommend">品牌推荐</a></li>
+					<li><a href="#special-recommend">专题推荐</a></li>
+					<li><a href="#category-recommend">品类推荐</a></li>
+					<li><a href="#friendship-link">友情链接</a></li>
+				</ul>
+				<div class="target-div current" id="group-buying-category">
+					<a href="#">美食团购</a>
+					<a href="#">电影团购</a>
+					<a href="#">休闲娱乐团购</a>
+					<a href="#">旅游团购</a>
+					<a href="#">生活服务团购</a>
+					<a href="#">购物团购</a>
+					<a href="#">丽人团购</a>
+					<a href="#">团购评论</a>
+					<a href="#">品牌团购</a>
+					<a href="#">专题团购</a>
+					<a href="#">美团团购</a>
+				</div>
+				<div class="target-div" id="hot-position">
+					<a href="#">望京团购</a>
+					<a href="#">朝阳大悦城团购</a>
+					<a href="#">回龙观团购</a>
+					<a href="#">五道口团购</a>
+					<a href="#">中关村团购</a>
+					<a href="#">亚运村团购</a>
+					<a href="#">昌平镇团购</a>
+					<a href="#">西单团购</a>
+					<a href="#">劲松团购</a>
+					<a href="#">天通苑团购</a>
+					<a href="#">远大路团购</a>
+					<a href="#">魏公村团购</a>
+					<a href="#">双桥团购</a>
+					<a href="#">十里堡团购 </a>
+					<a href="#">清河团购</a>
+					<a href="#">安定门团购</a>
+					<a href="#">十八里店团购</a>
+					<a href="#">航天桥团购</a>
+					<a href="#">王府井/东单团购</a>
+					<a href="#">公主坟/万寿路团购</a>
+					<a href="#">颐和园团购</a>
+					<a href="#">北京西站/六里桥团购</a>
+					<a href="#">朝外大街团购</a>
+				</div>
+			</div>
+			
+		</div>
+		
+		<footer>
+			<!--网站信息-->
+			<div class="site-info">
+				<div class="site-info-item">
+					<dl>
+						<dt><h3>获取更新</h3></dt>
+						<dd><a href="#">邮件订阅</a></dd>
+						<dd><a href="#">iPhone/Android</a></dd>
+						<dd><a href="#">美团QQ空间</a></dd>
+						<dd><a href="#">美团新浪微博</a></dd>
+						<dd><a href="#">sitemap</a></dd>
+						<dd><a href="#">RSS订阅</a></dd>
+					</dl>
+				</div>
+				<div class="site-info-item">
+					<dl>
+						<dt><h3>商务合作</h3></dt>
+						<dd><a href="#">商家合作</a></dd>
+						<dd><a href="#">美团商家营销平台</a></dd>
+						<dd><a href="#">到店餐饮代理商招募</a></dd>
+						<dd><a href="#">市场合作</a></dd>
+						<dd><a href="#">美团联盟</a></dd>
+						<dd><a href="#">美团云</a></dd>
+						<dd><a href="#">廉正邮箱</a></dd>
+						<dd><a href="#">聚宝盆餐饮开放平台</a></dd>
+						<dd><a href="#">美团点评智能收银机</a></dd>
+					</dl>
+				</div>
+				<div class="site-info-item">
+					<dl>
+						<dt><h3>获取更新</h3></dt>
+						<dd><a href="#">邮件订阅</a></dd>
+						<dd><a href="#">iPhone/Android</a></dd>
+						<dd><a href="#">美团QQ空间</a></dd>
+						<dd><a href="#">美团新浪微博</a></dd>
+						<dd><a href="#">sitemap</a></dd>
+						<dd><a href="#">RSS订阅</a></dd>
+					</dl>
+				</div>
+				<div class="site-info-item">
+					<dl>
+						<dt><h3>获取更新</h3></dt>
+						<dd><a href="#">邮件订阅</a></dd>
+						<dd><a href="#">iPhone/Android</a></dd>
+						<dd><a href="#">美团QQ空间</a></dd>
+						<dd><a href="#">美团新浪微博</a></dd>
+						<dd><a href="#">sitemap</a></dd>
+						<dd><a href="#">RSS订阅</a></dd>
+					</dl>
+				</div>
+				
+				<div class="site-info-item">
+					<div class="site-info-service-content">
+						<div class="hot-line-bg"></div>
+						<p class="contact-title">客服电话</p>
+						<p class="contact-info">
+							<span class="contact-number">10107888</span>
+							<span class="contact-time">(9:00-23:00)</span>
+						</p>
+						<p class="service-desc">退款、退换货、查看美团券</p>
+						<p><a href="#">参考教程，轻松搞定!</a></p>
+					</div>
+				</div>
+				
+			</div>
+			
+			<!--版权-->
+			<div class="copyright">
+				<p>
+					©2017<a href="#">美团网团购</a> meituan.com
+					<a href="#" target="_blank">京ICP证070791号</a> |
+	    			<a href="#">京ICP备10211739号</a> |
+	        		<a href="#"> 电子公告服务规则</a>
+				</p>
+				<div>
+					<a href="#">广播电视节目制作经营许可证（京）字第03889号</a>
+					<a href="#"><img src="public/img/wanan.png" >京公网安备11010502025545号</a>
+				</div>
+			</div>
+			
+			<!--可信证书-->
+			<div class="cert">
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+			</div>
+		</footer>
+		
+		<!--右边固定定位-->
+		<ul class="fixed-container">
+			<li><a href="#"><i></i><span>回到顶部</span></a></li>
+			<li><a href="#"><i></i><span>问卷调查</span></a></li>
+			<li><a href="#"><i></i><span>帮助中心</span></a></li>
+			<li><a href="#"><i></i><span>意见反馈</span></a></li>
+		</ul>
+	</body>
+	<script src="/public/common/lib.js"></script>
+	<script data-main="meituan/index" src="/public/common/main.js"></script>
+</html>

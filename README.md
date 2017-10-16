@@ -14,4 +14,4 @@ npm run build
 运行
 node app.js
 
-线上网址：http://120.55.41.4/
+线上网址：1、PC端  http://120.55.41.4/  http://120.55.41.4/meituan  ；2、移动端  http://120.55.41.4/taobao

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>淘宝首页</title>
+		{% if !isDev %}
+			<link rel="stylesheet" href="/public/css/lib.css">
+		{% endif %}
+	</head>
+
+	<body>
+		<div class="view">
+			<div class="top-fixed">
+				<header>
+					<div class="search-placeholder">
+						<i class="iconfont icon-fangdajing"></i>寻找宝贝店铺
+					</div>
+					<form action="https://s.m.taobao.com/h5" method="get">
+						<input class="search" type="text" onfocus="onfocus" />
+					</form>
+				</header>
+			</div>
+			<div class="content">
+				<div class="wrap">
+					<div class="slide-header">
+						<header>
+							<ul id="slide-ul" class="clearfix">
+								{% for val in content_slide.header %}
+									<li>
+										<a href="#">
+											<img src="{{ val }}" />
+										</a>
+									</li>
+								{% endfor %}
+								{% for val in content_slide.header %}
+									<li>
+										<a href="#">
+											<img src="{{ val }}" />
+										</a>
+									</li>
+								{% endfor %}
+							</ul>
+							<div class="slide-header-btn">
+								{% for val in content_slide.header %}
+									<span class=""></span>
+								{% endfor %}	
+							</div>
+						</header>
+					</div>
+					<nav class="all-category">
+						<div class="category-leve-1 clearfix">
+							<a href="#">
+								<img src="public/img/1.png"/>
+								<p>天猫</p>
+							</a>
+							<a href="#">
+								<img src="public/img/2.png"/>
+								<p>聚划算</p>
+							</a>
+							<a href="#">
+								<img src="public/img/3.png"/>
+								<p>天猫国际</p>
+							</a>
+							<a href="#">
+								<img src="public/img/4.png"/>
+								<p>外卖</p>
+							</a>
+							<a href="#">
+								<img src="public/img/5.png"/>
+								<p>天猫超市</p>
+							</a>
+						</div>
+						<div class="category-leve-1 clearfix">
+							<a href="#">
+								<img src="public/img/6.png"/>
+								<p>充值中心</p>
+							</a>
+							<a href="#">
+								<img src="public/img/7.png"/>
+								<p>飞猪旅行</p>
+							</a>
+							<a href="#">
+								<img src="public/img/8.png"/>
+								<p>领金币</p>
+							</a>
+							<a href="#">
+								<img src="public/img/9.png"/>
+								<p>到家</p>
+							</a>
+							<a href="#">
+								<img src="public/img/10.png"/>
+								<p>分类</p>
+							</a>
+						</div>
+					</nav>
+					<div class="top-line clearfix">
+						<div class="top-line-bg">
+							<span></span>							
+						</div>
+						<div class="top-line-body">
+							{% for val in content_slide.topLine %}
+								<dl>
+									<dt>{{val.title}}</dt>
+									<dd><a href="#">{{val.body}}</a></dd>
+								</dl>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="buying clearfix">
+						<div class="banic-buying">
+							<a href="#">
+								<img src="https://gw.alicdn.com/tps/i2/TB1nQXGJVXXXXcEXXXXKKOh2VXX-432-567.jpg_q50.jpg?imgtag=avatar"/>
+							</a>
+						</div>
+						<div>
+							<div class="has-nice">
+								<a href="#">
+									<img src="https://img.alicdn.com/tps/TB19RaGLpXXXXcDXpXXXXXXXXXX-333-261.jpg_q50.jpg?imgtag=avatar"/>
+								</a>
+								<a href="#">
+									<img src="https://img.alicdn.com/imgextra/i4/8/TB29NAJaUgQMeJjy0FeXXXOEVXa_!!2-subaru.png"/>
+								</a>
+							</div>
+							<div>
+								<div class="like-shopping">
+									<a href="#">
+										<img src="https://gw.alicdn.com/tps/TB1MzfaLpXXXXaXXXXXXXXXXXXX-345-306.jpg_q50.jpg"/>
+									</a>
+								</div>
+								<div class="must-buy">
+									<a href="#">
+										<img src="https://img.alicdn.com/imgextra/i3/27/TB21MzojFXXXXXbXpXXXXXXXXXX_!!27-2-subaru.png"/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="benefit">
+						<div class="benefit-title clearfix">
+							<div class="benefit-img"></div>
+							<span>
+								超实惠
+							</span>
+						</div>
+						<div class="fashion clearfix">
+							<div>
+								<a href="#">
+									<img src="https://gw.alicdn.com/tps/TB1u_5AKVXXXXaGXFXXXXXXXXXX-432-330.jpg_q50.jpg"/>
+								</a>
+							</div>
+							<div>
+								<a href="#">
+									<img src="https://img.alicdn.com/tps/TB1ElUEJVXXXXbfXFXXXXXXXXXX-225-354.png"/>
+								</a>
+							</div>
+							<div>
+								<a href="#">
+									<img src="https://gw.alicdn.com/tps/i3/TB17m7FLpXXXXXZXpXXKWJi7pXX-231-330.png"/>
+								</a>
+							</div>
+							<div>
+								<a href="#">
+									<img src="https://gw.alicdn.com/tps/i1/TB1rWBkJFXXXXXXXpXX7Wdi7pXX-231-330.jpg_q50.jpg"/>
+								</a>
+							</div>
+						</div>
+						<div class="special-offer clearfix">
+							<div>
+								<a href="#">
+									<img src="https://img.alicdn.com/imgextra/i3/92/TB2KtI1hPuhSKJjSspaXXXFgFXa_!!2-subaru.png"/>
+								</a>
+							</div>
+							<div>
+								<a href="#">
+									<img src="https://img.alicdn.com/bao/uploaded/TB1AdvmNFXXXXXwXFXXSutbFXXX.jpg_q50.jpg"/>
+								</a>
+							</div>
+							<div>
+								<a href="#">
+									<img src="https://img.alicdn.com/imgextra/i2/2670830951/TB25NlYaWm5V1BjSsziXXaZMpXa_!!2670830951.jpg_q50.jpg"/>
+								</a>
+							</div>
+							<div>
+								<a href="#">
+									<img src="https://img.alicdn.com/imgextra/i4/9/TB2xNEgsiRnpuFjSZFCXXX2DXXa_!!2-subaru.png"/>
+								</a>
+							</div>
+						</div>
+					</div>
+					<footer class="content-footer">
+						<div class="btns">
+							<a href="#">登录</a>
+							<a href="#">注册</a>
+							<a href="#">电脑版</a>
+							<a href="#">用户反馈</a>
+						</div>
+						<div class="copyright">
+							© 2016 浙 B2-20080224
+							<a href="#">服务中心</a>
+						</div>
+					</footer>
+				</div>
+			</div>
+			<div class="bottom-fixed">
+				<footer>
+					<a href="#" class="home">
+						<i class="iconfont icon-shouye"></i>
+						<p>首页</p>
+					</a>
+					<a href="#" class="logistics">
+						<i class="iconfont icon-wuliu"></i>
+						<p>物流</p>
+					</a>
+					<a href="#" class="cart">
+						<i class="iconfont icon-cart"></i>
+						<p>购物车</p>
+					</a>
+					<a href="#" class="my">
+						<i class="iconfont icon-wode"></i>
+						<p>我的淘宝</p>
+					</a>
+					<a href="#" class="more">
+						<i class="iconfont icon-gengduo"></i>
+						<p>更多</p>
+					</a>
+				</footer>
+			</div>
+		</div>
+		<script src="/public/common/lib.js"></script>
+		<script data-main="taobao/index" src="/public/common/main.js"></script>
+	</body>
+</html>
