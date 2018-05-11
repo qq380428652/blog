@@ -7,7 +7,7 @@
   * 首页的文章瀑布流、文章详情页的文章信息跟评论、图片列表、简介。
 * ### 后台：
   * 文章的增删改查，与前台同步。
-##  3、使用说明
+## 3、使用说明
 * ### 直接clone项目
       $ git clone https://github.com/qq380428652/blog.git
 * ### 安装依赖
@@ -21,6 +21,6 @@
       mongod --dbpath (路径)/data/db
 * ### 运行node服务
       node app.js
-##  4、注意
+## 4、注意
 项目基于nodejs和数据库mongodb，使用前请先搭好node环境和mongdb数据库安装
 
