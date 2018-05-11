@@ -20,7 +20,7 @@
   > #### 开启数据库（db为数据存放的位置，自定义）
       mongod --dbpath (路径)/data/db
 * ### 运行node服务
-      node app.js
-##  注意
+      node app.js
+##  4、注意
 项目基于nodejs和数据库mongodb，使用前请先搭好node环境和mongdb数据库安装
 
