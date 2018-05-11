@@ -2,7 +2,7 @@
 博客网站
 ##  使用说明
 ### 直接clone项目
-    $ git clone https://github.com/qq380428652/blog.git
+     $ git clone https://github.com/qq380428652/blog.git
 ### 安装依赖
     npm install 或 cnpm install
 ### 运行项目
