@@ -9,9 +9,9 @@
       npm run build 或 cnpm run build
 * ### 启动数据库
   * #### 进入数据库安装目录的bin文件夹
-     		  cd C:\Program Files\MongoDB\Server\3.4\bin
+          cd C:\Program Files\MongoDB\Server\3.4\bin
   *	#### 开启数据库（db为数据存放的位置，自定义）
-     		  mongod --dbpath (路径)/data/db
+          mongod --dbpath (路径)/data/db
 * ### 运行node服务
-        node app.js
+      node app.js
 
